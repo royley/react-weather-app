@@ -1,6 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import moment from 'moment';
+//@ts-ignore
+import WeatherIcon from 'react-icons-weather';
 
 const ForecastSummary = props => (
   <div>
@@ -20,18 +22,16 @@ const ForecastSummary = props => (
       </span>
     </div>
     <div className="forecast-summary__icon">
-      <span>
-        {props.icon}
-      </span>
+      <WeatherIcon name="owm" iconId={props.icon} />
     </div>
   </div>
-  )
+);
 
 ForecastSummary.propTypes = {
   date: PropTypes.number.isRequired,
   temperature: PropTypes.number.isRequired,
   description: PropTypes.string.isRequired,
   icon: PropTypes.string.isRequired,
-}
+};
 
 export default ForecastSummary
