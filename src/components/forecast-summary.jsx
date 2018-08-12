@@ -1,11 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import moment from 'moment';
 
 const ForecastSummary = props => (
   <div>
     <div className="forecast-summary__date">
       <span>
-        {props.date}
+        {moment(props.date).format('ddd Do MMM')}
       </span>
     </div>
     <div className="forecast-summary__temperature">
